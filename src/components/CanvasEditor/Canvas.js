@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
+
 const Canvas = ({ templateData, backgroundColor, caption, cta }) => {
   const canvasRef = useRef(null);
 
@@ -73,12 +74,10 @@ const Canvas = ({ templateData, backgroundColor, caption, cta }) => {
     ref={canvasRef}
     width={1080}
     height={1080}
-    className="w-full max-w-lg h-auto border border-gray-300 rounded-md"
+    className="w-full max-w-screen-(2xl) text-black h-auto border border-gray-300 rounded-md"
   />
   );
 };
 
 export default Canvas;
-
-
 

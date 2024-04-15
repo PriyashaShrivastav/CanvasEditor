@@ -2,8 +2,11 @@ import React, { useState, useRef } from 'react';
 import Canvas from './Canvas';
 import ColorPicker from './ColorPicker';
 import TextInput from './TextInput';
+import FileSelect from './FileSelect';
+
 
 const CanvasEditor = () => {
+  const canvasRef = useRef(null);
   const [templateData, setTemplateData] = useState(JSON.parse(templateDataJSON));
   const [backgroundColor, setBackgroundColor] = useState('#0369A1');
   const [caption, setCaption] = useState(templateData.caption.text);
@@ -30,8 +33,15 @@ const CanvasEditor = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-  <div className=" bg-white shadow-md rounded-lg p-8 w-full max-w-md">
+    <div className=" flex items-center justify-center h-screen">
+     <div className=" bg-white p-8 w-full max-w-md">
+       
+        <div className='mt-32 w-full '>
+          <h1 className="text-2xl font-bold mb-4">Ad Customization</h1>
+          <h4 className="text-gray-500 mb-4">Customize your ad and get the templates accordingly</h4>
+        </div>
+        <FileSelect />
+      
     <Canvas
       templateData={templateData}
       backgroundColor={backgroundColor}
@@ -95,3 +105,4 @@ const templateDataJSON = `{
 }`;
 
 export default CanvasEditor;
+
